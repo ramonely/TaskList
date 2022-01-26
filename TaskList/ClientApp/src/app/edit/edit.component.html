@@ -1,0 +1,29 @@
+<br/>
+<br/>
+
+<h2>Edit Task</h2>
+
+<br/>
+
+<input type="string" id="ID" value="{{product.id}}" hidden/>
+
+<p>Owner</p>
+<input type="text" id="Name" value="{{product.name}}" />
+
+<br>
+
+<p>Details</p>
+<input type="text" id="Details" value="{{product.detail}}"/>
+
+<br>
+
+<p>Due Date</p>
+<input type="text" id="DueDate" value="{{product.date}}"/>
+
+<br>
+
+<p>Completed</p>
+<input type="text" id="Completed" value="{{product.done}}"/>
+
+
+<button (click)="EditTask()">Save</button>

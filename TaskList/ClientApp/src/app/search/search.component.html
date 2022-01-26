@@ -1,0 +1,39 @@
+<br/>
+<br/>
+
+<h2>Search Task</h2>
+<br/>
+
+<p>By Owner</p>
+<input type="text" id="Name" />
+
+<button (click)="SearchTask()">Search</button>
+
+<br/>
+<br/>
+
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Owner</th>
+        <th>Detail</th>
+        <th>Due Date</th>
+        <th>Completed</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of cTask">
+        <td>{{ t.id }}</td>
+        <td>{{ t.ownerName }}</td>
+        <td>{{ t.details }}</td>
+        <td>{{ t.dueDate }}</td>
+        <td>{{ t.completed }}</td>
+        <td> <a routerLink = "/edit" [state] ="{id: t.id, name: t.ownerName, detail: t.details, date: t.dueDate, done: t.completed}" > Edit</a> </td>
+        <td><button (click) = "DeleteTask(t.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>

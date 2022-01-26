@@ -1,0 +1,32 @@
+<br/>
+<br/>
+
+<h1> All Task</h1>
+
+<br/>
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Owner</th>
+      <th>Detail</th>
+      <th>Due Date</th>
+      <th>Completed</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of cTask">
+      <td>{{ t.id }}</td>
+      <td>{{ t.ownerName }}</td>
+      <td>{{ t.details }}</td>
+      <td>{{ t.dueDate }}</td>
+      <td>{{ t.completed }}</td>
+      <td> <a routerLink = "/edit" [state] ="{id: t.id, name: t.ownerName, detail: t.details, date: t.dueDate, done: t.completed}" class="btn btn-primary"> Edit</a> </td>
+      <td><button (click) = "DeleteTask(t.id)" class="btn btn-danger"
+        >Delete</button></td>
+    </tr>
+  </tbody>
+</table>
